@@ -23,11 +23,9 @@
 				font-weight: 300;
 			}
 			#o1{
-				height:115.22vh;
-				transform: rotate(-60.25deg);
+				right:2vw;
+				bottom:-5vw;
 				margin: 0px;
-				right:20vw;
-				bottom:-10vw;
 				fill: rgb(191,220,130);
 				position: absolute;
 			}
@@ -143,6 +141,22 @@
 			$("#o1").click(function(){
 				morph.to('num1',{duration:750,easing:"quart-in-out",rotation:"none"});
 			});
+
+
+			var angle = 0;
+			function resize(){
+				var w = $(document).width()*0.794;
+				var h = $(document).height()*0.572;
+				var a = Math.atan(h/w);
+				a = a*180 / Math.PI;
+				var mx = (($(document).width()-10)+($(document).width()-w))/2;
+				var my = (($(document).height()-10)+($(document).height()-h))/2;
+
+				$("#o1").css("transform","rotate("+(-a+angle)+")");
+				a = angle;
+
+
+			}
 		</script>
 	</body>
 </html>
