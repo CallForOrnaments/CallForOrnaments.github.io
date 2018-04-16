@@ -122,6 +122,18 @@
 				top:-50vw;
 			}
 
+			@media(max-width: 1024px)
+			{
+				.text{font-size: 4vw;width: 55vw}
+				.textWrapper{width: 60vw;}
+				#tw1, #tw2, #tw3, #tw4{
+					left:18vw;
+					top:-90vw;
+				}
+
+
+			}
+
 		</style>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		
@@ -322,7 +334,7 @@
 			var morph2 = new SVGMorpheus('#o2');
 			var morph3 = new SVGMorpheus('#o3');
 			var morph4 = new SVGMorpheus('#o4');
-
+				
 
 			var o1s = 1;
 			$("#o1").click(function(){
@@ -335,7 +347,7 @@
 				else
 				{
 					$("#o1").css("fill","rgb(0,0,0)");
-					$("#tw1").css("top","-50vw");
+					$("#tw1").css("top","-90vw");
 				}
 				o1s += 1;
 				o1s %=2;
@@ -360,7 +372,7 @@
 				else
 				{
 					$("#o2").css("fill","rgb(0,0,0)");
-					$("#tw2").css("top","-50vw");
+					$("#tw2").css("top","-90vw");
 				}
 				o2s += 1;
 				o2s %=2;
@@ -384,7 +396,7 @@
 				else
 				{
 					$("#o3").css("fill","rgb(0,0,0)");
-					$("#tw3").css("top","-50vw");
+					$("#tw3").css("top","-90vw");
 				}
 				o3s += 1;
 				o3s %=2;
@@ -408,7 +420,7 @@
 				else
 				{
 					$("#o4").css("fill","rgb(0,0,0)");
-					$("#tw4").css("top","-50vw");
+					$("#tw4").css("top","-90vw");
 				}
 				o4s += 1;
 				o4s %=2;
@@ -437,7 +449,6 @@
 				var w = $(window).width()*0.7;
 				var h = $(window).height()*0.57;
 				var l = Math.sqrt((w*w)+(h*h));
-
 				$("#o1").css("height",l+"px");
 
 				var a = Math.atan(h/w);
