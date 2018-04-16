@@ -88,8 +88,8 @@
 			}
 
 			.text{
-				font-family: nueva std, serif;
-				font-weight: 500;
+				font-family: nueva-std, serif;
+				font-weight: 400;
 				font-size: 2.6vw;
 				color: rgb(191,220,130);
 				width: 45vw;
@@ -124,11 +124,11 @@
 
 			@media(max-width: 1024px)
 			{
-				.text{font-size: 4vw;width: 55vw}
-				.textWrapper{width: 60vw;}
+				.text{font-size: 5.5vw;width: 65vw}
+				.textWrapper{width: 70vw;}
 				#tw1, #tw2, #tw3, #tw4{
-					left:18vw;
-					top:-90vw;
+					left:13vw;
+					top:-150vw;
 				}
 
 
@@ -334,7 +334,7 @@
 			var morph2 = new SVGMorpheus('#o2');
 			var morph3 = new SVGMorpheus('#o3');
 			var morph4 = new SVGMorpheus('#o4');
-				
+			var il;	
 
 			var o1s = 1;
 			$("#o1").click(function(){
@@ -347,7 +347,7 @@
 				else
 				{
 					$("#o1").css("fill","rgb(0,0,0)");
-					$("#tw1").css("top","-90vw");
+					$("#tw1").css("top",il+"vw");
 				}
 				o1s += 1;
 				o1s %=2;
@@ -372,7 +372,7 @@
 				else
 				{
 					$("#o2").css("fill","rgb(0,0,0)");
-					$("#tw2").css("top","-90vw");
+					$("#tw2").css("top",il+"vw");
 				}
 				o2s += 1;
 				o2s %=2;
@@ -396,7 +396,7 @@
 				else
 				{
 					$("#o3").css("fill","rgb(0,0,0)");
-					$("#tw3").css("top","-90vw");
+					$("#tw3").css("top",il+"vw");
 				}
 				o3s += 1;
 				o3s %=2;
@@ -420,7 +420,7 @@
 				else
 				{
 					$("#o4").css("fill","rgb(0,0,0)");
-					$("#tw4").css("top","-90vw");
+					$("#tw4").css("top",il+"vw");
 				}
 				o4s += 1;
 				o4s %=2;
@@ -437,11 +437,27 @@
 
 
 			$(document).ready(function(){
+				var ww = $(window).width();
 				resizeShape();
+				if(ww>1024)
+					il = -50;
+				else
+					il = -150;
 			});
 
 			$(window).resize(function(){
+				var ww = $(window).width();
 				resizeShape();
+				if(ww>1024)
+					il = -50;
+				else
+				{
+					il = -150;
+					$("#tw1").css("top",il+"vw");
+					$("#tw2").css("top",il+"vw");
+					$("#tw3").css("top",il+"vw");
+					$("#tw4").css("top",il+"vw");
+				}
 			});
 
 			var angle = 0;
