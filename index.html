@@ -124,10 +124,10 @@
 
 			@media(max-width: 1024px)
 			{
-				.text{font-size: 5.5vw;width: 65vw}
-				.textWrapper{width: 70vw;}
+				.text{font-size: 5.5vw;margin: 0; width: 70vw}
+				.textWrapper{padding: 4vw; width: 70vw}
 				#tw1, #tw2, #tw3, #tw4{
-					left:13vw;
+					left:11.8vw;
 					top:-150vw;
 				}
 
@@ -334,7 +334,8 @@
 			var morph2 = new SVGMorpheus('#o2');
 			var morph3 = new SVGMorpheus('#o3');
 			var morph4 = new SVGMorpheus('#o4');
-			var il;	
+			var il;
+			var el1, el2, el3, el4;	
 
 			var o1s = 1;
 			$("#o1").click(function(){
@@ -342,7 +343,7 @@
 				if(o1s == 1)
 				{
 					$("#o1").css("fill","rgb(191,220,130)");
-					$("#tw1").css("top","12vw");
+					$("#tw1").css("top",el1+"px");
 				}
 				else
 				{
@@ -367,7 +368,7 @@
 				if(o2s == 1)
 				{
 					$("#o2").css("fill","rgb(191,220,130)");
-					$("#tw2").css("top","15vh");
+					$("#tw2").css("top",el2+"px");
 				}
 				else
 				{
@@ -391,7 +392,7 @@
 				if(o3s == 1)
 				{
 					$("#o3").css("fill","rgb(191,220,130)");
-					$("#tw3").css("top","32vw");
+					$("#tw3").css("top",el3+"px");
 				}
 				else
 				{
@@ -415,7 +416,7 @@
 				if(o4s == 1)
 				{
 					$("#o4").css("fill","rgb(191,220,130)");
-					$("#tw4").css("top","23vw");
+					$("#tw4").css("top",el4+"px");
 				}
 				else
 				{
@@ -440,19 +441,40 @@
 				var ww = $(window).width();
 				resizeShape();
 				if(ww>1024)
+				{
 					il = -50;
+					el1 = 0.12*$(window).width();
+					el2 = 0.15(window).height();
+					el3 = 0.32*(window).width();
+					el4 = 0.23*$(window).width();				}
 				else
+				{
 					il = -150;
+					el1 = (($(window).height()-$("#tw1").height())/2)-40;
+					el2 = (($(window).height()-$("#tw2").height())/2)-40;
+					el3 = (($(window).height()-$("#tw3").height())/2)-40;
+					el4 = (($(window).height()-$("#tw4").height())/2)-40;
+				}
 			});
 
 			$(window).resize(function(){
 				var ww = $(window).width();
 				resizeShape();
 				if(ww>1024)
+				{
 					il = -50;
+					el1 = 0.12*$(window).width();
+					el2 = 0.15(window).height();
+					el3 = 0.32*(window).width();
+					el4 = 0.23*$(window).width();	
+				}
 				else
 				{
 					il = -150;
+					el1 = (($(window).height()-$("#tw1").height())/2)-40;
+					el2 = (($(window).height()-$("#tw2").height())/2)-40;
+					el3 = (($(window).height()-$("#tw3").height())/2)-40;
+					el4 = (($(window).height()-$("#tw4").height())/2)-40;
 					$("#tw1").css("top",il+"vw");
 					$("#tw2").css("top",il+"vw");
 					$("#tw3").css("top",il+"vw");
